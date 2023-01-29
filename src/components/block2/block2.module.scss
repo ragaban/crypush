@@ -1,0 +1,31 @@
+@import "../../animation.scss";
+.block2{
+    width: 100%;
+    height: 100vh;
+    max-height: 1080px;
+    h1{
+        margin-bottom: 50px;
+    }
+    .block2__content{
+        display: flex;
+        width: 100%;
+        margin-top: 50px;
+
+        .block2__lc{
+            width: 25%;
+            position: relative;
+            .elipse{
+                position: absolute;
+                top: -58px;
+                left: -16px;
+                width: 400px;
+                height: 400px;
+                filter: blur(75px);
+            }
+        }
+        .block2__rc{
+            width: 75%;
+            
+        }
+    }
+}

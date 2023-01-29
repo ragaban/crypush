@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Pangram';
+    src: local('Pangram Medium'), local('Pangram-Medium'),
+        url('Pangram-Medium.woff2') format('woff2'),
+        url('Pangram-Medium.woff') format('woff'),
+        url('Pangram-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }

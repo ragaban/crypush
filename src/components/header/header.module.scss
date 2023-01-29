@@ -1,0 +1,84 @@
+@import "../../animation.scss";
+
+.header{
+    max-width: 1650px;
+    left: 135px;
+    right: 135px;
+    height: 31px;
+    margin: 0 auto;
+    padding-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    transition: .5s;
+    .header__logo{
+        width: 220px;
+        height: 31px;
+    }
+    .header__menu{
+        ul{
+            display: flex;
+            align-items: center;
+            li{
+                font-size: 17px;
+                list-style-type: none;
+                a{
+                    margin-left: 70px;
+                    position: relative;
+                    transition: .3s;
+                    &:hover{
+                        color: #ccc;
+                        &::after{
+                            content: "";
+                            height: 1px;
+                            background: linear-gradient(90deg, #0C3483 0%, #A2B6DF 100%, #6B8CCE 100%);
+                            position: absolute;
+                            left: -3px;
+                            right: -3px;
+                            bottom: -20px;
+                            opacity: 0;
+                            animation: links-hover .3s forwards;
+                        }
+                    }
+                }
+                .menu__item{
+                    margin-left: 74px;
+                    .header__icon{
+                        width: 20px;
+                        height: 20px;
+                        fill: #fff;
+                        margin-right: 15px;
+                        position: relative;
+                        top: 3px;
+                    }
+                    .header__language{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header__mini{
+    height: 15px;
+    padding: 20px;
+    z-index: 100;
+}
+.header__wrapper{
+    position: fixed;
+    width: 100vw;
+    height: 55px;
+    background: #000;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-200%);
+    transition: .5s;
+    z-index: 99;
+}
+.header__wrapper_active{
+    transform: translateY(0%);
+}
