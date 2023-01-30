@@ -41,10 +41,13 @@ export const Block2 = ()=>{
         },200);
     },[menuState]);
 
+
+
+
     return(
-        <section className={`container ${s.block2}`}>
+        <section className={`container panel ${s.block2}`}>
             <header className={s.header}>
-                <h1>Start Your AI Trading Now</h1>
+                <h1 className={s.text}>Start Your AI Trading Now</h1>
                 <p>Enter the world of AI trading with an algorithmic bot <br/> system! Let us do all the hard work for you and provide <br/> the best quality!</p>
             </header>
             <div className={s.block2__content}>

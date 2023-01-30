@@ -2,37 +2,36 @@ import React, { useEffect } from 'react';
 import s from './block1.module.scss';
 import phone1 from "../../images/phone1.png";
 import phone2 from "../../images/phone2.png";
-import arrow from "../../images/block1_arrow.png";
 import svg_sprite from "../../images/sprite_icons.svg";
 import scroll from "../../images/block1_scrollbutton.png";
 import paralaxMouseInit from "./parallax.js";
 import bytcoin from "../../images/bytcoin.png";
 import elipse from "../../images/Ellipse.png";
+import gsap from "gsap";
+import { MyButton } from '../mybutton/mybutton';
 
 export const Block1 = ()=>{
 
     useEffect(()=>{
         paralaxMouseInit();
+        gsap.from('.anim__text', {y: 100, opacity: 0, duration: .3, delay: .5});
+        // const tl = gsap.timeline({defaults: {duration: 4}});
+        // tl.from('.anim__text', {y: 100, opacity: 0, duration: 1})
+        // .from('.anim__text2', {y: 100, opacity: 0, duration: 1})
     },[]);
 
     return(
-        <section className={`container ${s.block1}`}>
+        <section className={`container panel ${s.block1}`}>
 
             <img className={s.block1__elipse} src={elipse} alt="elipse" />
             <img className={s.block1__bytcoin} src={bytcoin} alt="bytcoin" />
 
             <div className={s.block1__lc}>
-                <h1>Algorithmic Crypto Trading Bot</h1>
-                <p>An AI-powered bot that allows you fully automate your trading</p>
+                <h1 className='anim__text'>Algorithmic Crypto Trading Bot</h1>
+                <p className='anim__text2'>An AI-powered bot that allows you fully automate your trading</p>
                 <div className={s.block1__buttons}>
-                    <button>
-                        <span>Let`S Get Started</span>
-                        <img src={arrow} alt="arrow" />
-                    </button>
-                    <button>
-                        <span>Request A Demo</span>
-                        <img src={arrow} alt="arrow" />
-                    </button>
+                    <MyButton text="Let`S Get Started" />
+                    <MyButton text="Request A Demo" />
                 </div>
                 <div className={s.block1__info}>
                     <div>
