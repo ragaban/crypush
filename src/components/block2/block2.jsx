@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import s from './block2.module.scss';
-import graph from '../../images/block2_graph.png';
 import elipse from "../../images/Ellipse.png";
 import manage from "../../images/manage.png";
 import traiding from "../../images/trading.png";
@@ -11,12 +10,11 @@ import traiding_content from "../../images/trading-content.png";
 import api_content from "../../images/api-content.png";
 import portfolio_content from "../../images/portfolio-content.png";
 import { MenuButton } from './menuButton';
-import { Block2Content } from './block2Content';
 
 export const Block2 = ()=>{
 
     const [menuState, setMenuState] = useState({image: manage_content, desc: "Connect your account to the worldwide Crypto Exchanges and manage your funds directly there."});
-
+    const img = useRef();
     const menu = [
         {id: "button1", image: manage, text: "Manage Investments", content: manage_content, desc: "Connect your account to the worldwide Crypto Exchanges and manage your funds directly there."},
         {id: "button2", image: traiding, text: "Pro Trading Strategies", content: traiding_content, desc: "Choose a strategy that suits you best across Cryppush and Official Providers options."},
@@ -36,6 +34,13 @@ export const Block2 = ()=>{
         document.getElementById("button1").classList.add("block2__button_active");
     },[]);
 
+    useEffect(()=>{
+        img.current.classList.remove(s.active);
+        setTimeout(()=>{
+            img.current.classList.add(s.active);
+        },200);
+    },[menuState]);
+
     return(
         <section className={`container ${s.block2}`}>
             <header className={s.header}>
@@ -48,7 +53,10 @@ export const Block2 = ()=>{
                     {buttons}
                 </div>
                 <div className={s.block2__rc}>
-                    <Block2Content image={menuState.image} desc={menuState.desc} />
+                    <div className={s.content} ref={img}>
+                        <img className={s.image} src={menuState.image} alt="image" />
+                        <p className={s.desc}>{menuState.desc}</p>
+                    </div>
                 </div>
             </div>
         </section>

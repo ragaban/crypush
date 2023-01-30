@@ -25,7 +25,21 @@
         }
         .block2__rc{
             width: 75%;
-            
+            .content{
+                width: 100%;
+                opacity: 0;
+                img{
+                    height: 640px;
+                }
+            }
+            .active{
+                opacity: 1;
+                transition: 1s;
+            }
+            .desc{
+                font-size: 17px;
+                text-align: center;
+            }
         }
     }
 }
