@@ -31,12 +31,12 @@
     &:hover{
         img{
             opacity: 1;
-            right: 0;
+            transform: translateX(16px);
         }
         span{
-            left: 0;
+            transform: translateX(-16px);
+            display: inline-block;
         }
-        
         background: linear-gradient(90deg, #0C3483 0%, #A2B6DF 100%, #6B8CCE 100%) no-repeat;
     }
 }

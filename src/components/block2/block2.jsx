@@ -10,9 +10,11 @@ import traiding_content from "../../images/trading-content.png";
 import api_content from "../../images/api-content.png";
 import portfolio_content from "../../images/portfolio-content.png";
 import { MenuButton } from './menuButton';
+import gsap from "gsap";
 
 export const Block2 = ()=>{
 
+    const tl = gsap.timeline();
     const [menuState, setMenuState] = useState({image: manage_content, desc: "Connect your account to the worldwide Crypto Exchanges and manage your funds directly there."});
     const img = useRef();
     const menu = [
@@ -43,19 +45,18 @@ export const Block2 = ()=>{
 
 
 
-
     return(
         <section className={`container panel ${s.block2}`}>
             <header className={s.header}>
-                <h1 className={s.text}>Start Your AI Trading Now</h1>
-                <p>Enter the world of AI trading with an algorithmic bot <br/> system! Let us do all the hard work for you and provide <br/> the best quality!</p>
+                <h1 className={`block2__anim1 ${s.text}`}>Start Your AI Trading Now</h1>
+                <p className='block2__anim2'>Enter the world of AI trading with an algorithmic bot <br/> system! Let us do all the hard work for you and provide <br/> the best quality!</p>
             </header>
             <div className={s.block2__content}>
-                <div className={s.block2__lc}>
+                <div className={`block2__anim3 ${s.block2__lc}`}>
                     <img className={s.elipse} src={elipse} alt="Elipse" />
                     {buttons}
                 </div>
-                <div className={s.block2__rc}>
+                <div className={`block2__anim4 ${s.block2__rc}`}>
                     <div className={s.content} ref={img}>
                         <img className={s.image} src={menuState.image} alt="image" />
                         <p className={s.desc}>{menuState.desc}</p>

@@ -12,6 +12,7 @@ body{
     color: #fff;
     font-size: 20px;
     box-sizing: border-box;
+    overflow-y: hidden;
 
     .container{
         max-width: 1650px;
@@ -37,3 +38,9 @@ body{
     background: linear-gradient(112.85deg, #182745 25.47%, #2B3A5B 90.88%, #1B202B 120%) !important;
     backdrop-filter: blur(120px);
 }
+
+
+ .swiper-slide{
+    display: flex;
+    justify-content: center;
+ }

@@ -2,36 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import s from './header.module.scss';
 import logo from "../../images/logo.png";
 import svg_sprite from "../../images/sprite_icons.svg";
-import Switch from '@material-ui/core/Switch';
-import { withStyles } from '@material-ui/core/styles';
-import { Menu, MenuItem } from '@material-ui/core';
+import gsap from "gsap";
 
 
-
-const MySwitch = withStyles({
-    root: {
-        border: "1px #fff solid",
-        borderRadius: "12px",
-        width: "50px",
-        padding: "4px"
-    },
-    switchBase: {
-      color: "#fff",
-      position: "relative",
-      '&$checked': {
-        color: "#fff",
-      },
-      '&$checked + $track': {
-        backgroundColor: '#14161D',
-      },
-    },
-    checked: {},
-    track: {},
-})(Switch);
 
 
 export const Header = ()=>{
 
+    const tl = gsap.timeline();
     const header = useRef();
     const header_wrapper = useRef();
     const [theme, setTheme] = useState(true);
@@ -60,42 +38,53 @@ export const Header = ()=>{
                 header_wrapper.current.classList.remove(s.header__wrapper_active);
             }
         });
+        showElements();
     },[]);
+
+    function showElements(){
+        tl.from(".header__anim1", {opacity: 0, duration: .5, delay: 1})
+        .from(".header__anim2", {opacity: 0, duration: .3}, "-=0.2")
+        .from(".header__anim3", {opacity: 0, duration: .3}, "-=0.2")
+        .from(".header__anim4", {opacity: 0, duration: .3}, "-=0.2")
+        .from(".header__anim5", {opacity: 0, duration: .3}, "-=0.2")
+        .from(".header__anim6", {opacity: 0, duration: .3}, "-=0.2")
+        .from(".header__anim7", {opacity: 0, duration: .3}, "-=0.2")
+    }
 
     return(
         <>
         <div className={s.header__wrapper} ref={header_wrapper}></div>
         <header className={s.header} ref={header}>
-            <img className={s.header__logo} src={logo} alt="logo"></img>
+            <img className={`header__anim1 ${s.header__logo}`} src={logo} alt="logo"></img>
             <nav className={s.header__menu}>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Strategies</a></li>
-                    <li>
+                    <li className='header__anim2'><a href="#">Home</a></li>
+                    <li className='header__anim3'><a href="#">About Us</a></li>
+                    <li className='header__anim4'><a href="#">Strategies</a></li>
+                    <li className='header__anim5'>
                         <span className={s.menu__item}>
                             <svg className={s.header__icon}>
                                 <use xlinkHref={`${svg_sprite}#language_icon`}></use>
                             </svg>
                             <span className={s.header__language} onClick={handleClick}> ENG </span>
-                            <Menu id="simple-menu" anchorEl={language} keepMounted open={Boolean(language)} onClose={handleClose}>
-                                <MenuItem onClick={handleClose} selected={true}>ENG</MenuItem>
-                                <MenuItem onClick={handleClose}>RUS</MenuItem>
-                            </Menu>
+                            
                          </span>
                     </li>
-                    <li>
+                    <li className='header__anim6'>
                         <span className={s.menu__item}>
-                            <MySwitch className={s.header__switch} checked={theme} onChange={handleChange} name="theme" size='small'/>
+                            <label className={s.switch}>
+                                <input type="checkbox" />
+                                <span className={`${s.slider} ${s.round}`}></span>
+                            </label>
                         </span>
                     </li>
-                    <li>
+                    <li className='header__anim7'>
                         <span className={s.menu__item}>
                             <svg className={s.header__icon}>
                                 <use xlinkHref={`${svg_sprite}#account_icon`}></use>
                             </svg>
                             <a style={{margin: "0px"}} href="#">Account</a>
-                         </span>
+                        </span>
                     </li>
                 </ul>
             </nav>

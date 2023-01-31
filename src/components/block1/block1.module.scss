@@ -78,12 +78,14 @@
             top: 0;
             left: 40px;
             z-index: 3;
+            transition: .1s all;
         }
         .phone2{
             position: absolute;
             top: 0;
             right: 0;
             z-index: 2;
+            transition: .1s all;
         }
         &::after{
             content: "";

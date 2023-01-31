@@ -2,19 +2,71 @@
     height: 100vh;
     width: 100%;
     max-height: 1080px;
-    display: flex;
-    justify-content: space-between;
     padding: 65px 25px 0 25px !important;
     h1{
         margin-bottom: 50px;
     }
-    .block3__lc{
-        width: 50%;
+    .block3__row{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .block3__lc{
+            width: 50%;
+        }
+        .block3__rc{
+            width: fit-content;
+        }
     }
-    .block3__rc{
-        width: fit-content;
+    .block3__brands{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        img{
+            margin-right: 100px;
+            height: 39px;
+        }
     }
-    .block3__buttons{
+    .block3__footer{
+        h1{
+            margin: 0;
+        }
+        .block3__content{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            p{
+                width: fit-content;
+                display: inline-block;
+            }
+            .mybutton{
+                background: none;
+                border: 1px #fff solid;
+                background-position: center;
+                width: 275px;
+                height: 72px;
+                font-family: 'Pangram';
+                font-size: 17px;
+                color: #fff;
+                border-radius: 100px;
+                cursor: pointer;
+                span{
+                    position: relative;
+                    transition: .8s;
+                    margin-right: 18px;
+                }
+                img{
+                    position: relative;
+                    transition: .5s;
+                    position: relative;
+                    top: 4px;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
         
     }
+   
 }
