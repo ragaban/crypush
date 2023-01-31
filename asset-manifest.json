@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4bda7df5.css",
+    "main.js": "/static/js/main.2757b52a.js",
+    "static/media/Ellipse.png": "/static/media/Ellipse.c6157f5b261fe23d9723.png",
+    "static/media/manage-content.png": "/static/media/manage-content.a4a14779946b740ed9d3.png",
+    "static/media/trading-content.png": "/static/media/trading-content.efcea296041d9dd598e4.png",
+    "static/media/api-content.png": "/static/media/api-content.d6bde8d7ff62b7f8ae1e.png",
+    "static/media/portfolio-content.png": "/static/media/portfolio-content.e5683d4f506c7cd3a197.png",
+    "static/media/phone1.png": "/static/media/phone1.de832382887c813aa6d7.png",
+    "static/media/phone2.png": "/static/media/phone2.c18ef8cc3c54f513ad0f.png",
+    "static/media/carousel1.png": "/static/media/carousel1.839d3a99d6541f7e3148.png",
+    "static/media/GoshaSans-Regular.ttf": "/static/media/GoshaSans-Regular.ca3f7564b479078c805a.ttf",
+    "static/media/Pangram-Medium.ttf": "/static/media/Pangram-Medium.a15a6f367bf17d5f9f64.ttf",
+    "static/media/bytcoin.png": "/static/media/bytcoin.0b5a63c602e011138550.png",
+    "static/media/carousel3.png": "/static/media/carousel3.238d030cfec39d7582ba.png",
+    "static/media/carousel2.png": "/static/media/carousel2.b37b91d051685306195c.png",
+    "static/media/GoshaSans-Regular.woff": "/static/media/GoshaSans-Regular.0eb41276e44fa590925a.woff",
+    "static/media/Pangram-Medium.woff": "/static/media/Pangram-Medium.d7abedc4b3ced9e906fc.woff",
+    "static/media/sprite_icons.svg": "/static/media/sprite_icons.f7271b31c0ed6f0e9c8e3e74a6b18e23.svg",
+    "static/media/GoshaSans-Regular.woff2": "/static/media/GoshaSans-Regular.3c1df0e6f6ba60b9b376.woff2",
+    "static/media/Pangram-Medium.woff2": "/static/media/Pangram-Medium.2bcad6fe9e8dea173692.woff2",
+    "index.html": "/index.html",
+    "main.4bda7df5.css.map": "/static/css/main.4bda7df5.css.map",
+    "main.2757b52a.js.map": "/static/js/main.2757b52a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4bda7df5.css",
+    "static/js/main.2757b52a.js"
+  ]
+}
