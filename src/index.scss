@@ -12,7 +12,7 @@ body{
     color: #fff;
     font-size: 20px;
     box-sizing: border-box;
-    overflow-y: hidden;
+    overflow: hidden;
 
     .container{
         max-width: 1650px;
@@ -39,8 +39,25 @@ body{
     backdrop-filter: blur(120px);
 }
 
-
+.swiper{
+    padding-bottom: 30px !important;
+    height: 295px;
+}
+.swiper-slide-active{
+    h3{
+        font-size: 30px !important;
+    }
+}
  .swiper-slide{
     display: flex;
     justify-content: center;
+ }
+ .swiper-pagination-progressbar{
+    background-color: #ccc !important;
+    height: 3px !important;
+    top: 99% !important;
+    z-index: 100;
+ }
+ .swiper-pagination-progressbar-fill{
+    background: #1D438E;
  }

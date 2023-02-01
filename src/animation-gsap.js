@@ -10,6 +10,7 @@ export function scrollAnimation(){
     function goToSection(i) {
         if(!i) block1Anim();
         else if(i === 1) block2Anim();
+        else if(i === 2) block3Anim();
       scrollTween = gsap.to(window, {
       scrollTo: {y: i * window.innerHeight, autoKill: false},
       duration: 1, 
@@ -55,4 +56,11 @@ export function block2Anim(){
     .from(".block2__anim1", {x: -100, opacity: 1, duration: 1.5}, "-=0.6")
     .from(".block2__anim2", {y: 100, opacity: 0, duration: .4}, "-=1")
     
+}
+export function block3Anim(){
+  const tl = gsap.timeline();
+  tl.from(".block3__anim1", {x:-200, opacity: 0, duration: .4, delay: .3})
+  .from(".block3__anim2", {x: 200, opacity: 0, duration: .4}, "-=0.3")
+  .from(".block3__anim3", {opacity: 0, duration: .4}, "-=0.3")
+  
 }
