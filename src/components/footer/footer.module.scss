@@ -1,0 +1,64 @@
+.footer{
+    height: 100vh;
+    width: 100%;
+    max-height: 1080px;
+    display: flex;
+    align-items: flex-end;
+    .footer__wrapper{
+        padding: 50px 25px !important;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        margin-bottom: 38px;
+        &::after{
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            top:0;
+            left:0;
+            right: 0;
+            background: linear-gradient(90deg, #0C3483 40%, #A2B6DF, #6B8CCE);
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            bottom:0;
+            left:0;
+            right: 0;
+            background: linear-gradient(90deg, #0C3483 40%, #A2B6DF, #6B8CCE);
+        }
+        .footer__lc{
+            width: 50%;
+            img{
+                width: 220px;
+            }
+            p{
+                margin: 25px 0 30px 0;
+            }
+            span{
+                color: rgb(133, 133, 133);
+            }
+        }
+        .footer__rc{
+            width: fit-content;
+            h2{
+                font-family: "Gosha Sans";
+            }
+            .footer__social{
+                margin: 15px 0 32px 0;
+                img{
+                    margin-right: 46px;
+                    cursor: pointer;
+                }
+            }
+            .footer__messages{
+                float: right;
+                cursor: pointer;
+            }
+        }
+    }
+}

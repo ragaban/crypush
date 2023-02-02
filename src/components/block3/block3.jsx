@@ -60,8 +60,7 @@ export const Block3 = ()=>{
                     modules={[Pagination, Navigation]}
                     autoplay={{delay: 1000}}
                     slidesPerView={3}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    
                 >
                 <SwiperSlide>
                     <div className={s.slide__wrapper}>

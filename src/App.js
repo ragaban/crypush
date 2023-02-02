@@ -5,6 +5,8 @@ import "./index.scss";
 import { useEffect } from "react";
 import { Block3 } from "./components/block3/block3";
 import {scrollAnimation, showAnimation} from "./animation-gsap.js";
+import { Block4 } from "./components/block4/block4";
+import { Footer } from "./components/footer/footer";
 
 
 
@@ -21,7 +23,10 @@ function App() {
           <Block1 />
           <Block2 />
           <Block3 />
+          <Block4 />
+
         </div>
+        <Footer />
     </div>
   );
 }

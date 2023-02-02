@@ -8,9 +8,11 @@ export function scrollAnimation(){
     let panels = gsap.utils.toArray(".panel"),
     scrollTween;
     function goToSection(i) {
+      console.log(i);
         if(!i) block1Anim();
         else if(i === 1) block2Anim();
         else if(i === 2) block3Anim();
+        else if(i === 4) block4Anim();
       scrollTween = gsap.to(window, {
       scrollTo: {y: i * window.innerHeight, autoKill: false},
       duration: 1, 
@@ -63,4 +65,9 @@ export function block3Anim(){
   .from(".block3__anim2", {x: 200, opacity: 0, duration: .4}, "-=0.3")
   .from(".block3__anim3", {opacity: 0, duration: .4}, "-=0.3")
   
+}
+export function block4Anim(){
+  const tl = gsap.timeline();
+  console.log("sad");
+  tl.to(".block4__anim", { x: 2000, duration: 1 })
 }

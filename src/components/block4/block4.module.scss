@@ -1,0 +1,22 @@
+.block4{
+    height: 100vh;
+    width: 100%;
+    padding: 65px 25px 0 25px !important;
+    max-height: 1080px;
+    position: relative;
+    .block4__content{
+        display: flex;
+        .block4__lc{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .block4__rc{
+            width: 50%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
