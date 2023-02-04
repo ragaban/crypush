@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import s from './header.module.scss';
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.webp";
 import svg_sprite from "../../images/sprite_icons.svg";
 import gsap from "gsap";
+import { Link } from 'react-router-dom';
 
 
 
@@ -58,8 +59,8 @@ export const Header = ()=>{
             <img className={`header__anim1 ${s.header__logo}`} src={logo} alt="logo"></img>
             <nav className={s.header__menu}>
                 <ul>
-                    <li className='header__anim2'><a href="#">Home</a></li>
-                    <li className='header__anim3'><a href="#">About Us</a></li>
+                    <li className='header__anim2'><Link to="/crypush/">Home</Link></li>
+                    <li className='header__anim3'><Link to="/crypush/about/">About Us</Link></li>
                     <li className='header__anim4'><a href="#">Strategies</a></li>
                     <li className='header__anim5'>
                         <span className={s.menu__item}>

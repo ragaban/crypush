@@ -4,6 +4,12 @@
     padding: 65px 25px 0 25px !important;
     max-height: 1080px;
     position: relative;
+    .block4__elipse{
+        position: absolute;
+        top: 17px;
+        right: 32px;
+        width: 900px;
+    }
     .block4__content{
         display: flex;
         .block4__lc{
@@ -14,8 +20,10 @@
         }
         .block4__rc{
             width: 50%;
-            img{
+            .block4__img{
                 width: 100%;
+                z-index: 2;
+                position: relative;
             }
         }
     }

@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import s from './block2.module.scss';
-import elipse from "../../images/Ellipse.png";
+import elipse from "../../images/Ellipse.webp";
 import manage from "../../images/manage.png";
 import traiding from "../../images/trading.png";
 import api from "../../images/api.png";
 import portfolio from "../../images/portfolio.png";
-import manage_content from "../../images/manage-content.png";
-import traiding_content from "../../images/trading-content.png";
-import api_content from "../../images/api-content.png";
-import portfolio_content from "../../images/portfolio-content.png";
+import manage_content from "../../images/manage-content.webp";
+import traiding_content from "../../images/trading-content.webp";
+import api_content from "../../images/api-content.webp";
+import portfolio_content from "../../images/portfolio-content.webp";
 import { MenuButton } from './menuButton';
 import gsap from "gsap";
 
@@ -46,7 +46,7 @@ export const Block2 = ()=>{
 
 
     return(
-        <section className={`container panel ${s.block2}`}>
+        <section className={`container ${s.block2}`}>
             <header className={s.header}>
                 <h1 className={`block2__anim1 ${s.text}`}>Start Your AI Trading Now</h1>
                 <p className='block2__anim2'>Enter the world of AI trading with an algorithmic bot <br/> system! Let us do all the hard work for you and provide <br/> the best quality!</p>

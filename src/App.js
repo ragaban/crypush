@@ -3,32 +3,45 @@ import { Block2 } from "./components/block2/block2";
 import { Header } from "./components/header/header";
 import "./index.scss";
 import { useEffect } from "react";
-import { Block3 } from "./components/block3/block3";
-import { Block4 } from "./components/block4/block4";
-import { Footer } from "./components/footer/footer";
-import { ScrollAnimation } from "./components/scrollAnimation";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Main } from "./components/main/main";
+import { About } from "./components/about/about";
+import { Preloader } from "./components/preloader/preloader";
+import gsap from "gsap";
+import { block1Anim } from "./components/scrollAnimation";
 
 
 
 function App() {
-  
+
   useEffect(()=>{
-    
+      const tl = gsap.timeline();
+      tl.to(".preloader__anim", { display: "none", duration: 0.1, delay: 1 });
+    setTimeout(()=>{
+      block1Anim();
+    },900);   
   },[]);
 
-  return (
-    <div className="App">
-        <ScrollAnimation />
-        <Header />
-        <div className="swipe-section">
-          <Block1 />
-          <Block2 />
-          <Block3 />
-          <Block4 />
+  const content = [
+    <BrowserRouter>
+    <Preloader />
+      <Header />
+      <Routes>
+        <Route path="/crypush/" element={<Main />} />
+        <Route path="/crypush/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  ];
 
-        </div>
-        {/* <Footer /> */}
-    </div>
+  return (  
+    <BrowserRouter>
+    <Preloader />
+      <Header />
+      <Routes>
+        <Route path="/crypush/" element={<Main />} />
+        <Route path="/crypush/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

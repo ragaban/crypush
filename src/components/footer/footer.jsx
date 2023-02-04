@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './footer.module.scss';
-import logo from  "../../images/logo.png";
+import logo from  "../../images/logo.webp";
 import telegram from "../../images/telegram-icon.png";
 import instagram from "../../images/instagram-icon.png";
 import twitter from "../../images/twitter-icon.png";
@@ -10,7 +10,7 @@ import messages from "../../images/footer-messages.png";
 export const Footer = ()=>{
 
     return(
-        <footer className={`container panel ${s.footer}`}>
+        <footer className={`container block5__anim ${s.footer}`}>
                 <div className={s.footer__wrapper}>
                     <div className={s.footer__lc}>
                         <img src={logo} alt="footer logo" />

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import s from './block1.module.scss';
-import phone1 from "../../images/phone1.png";
-import phone2 from "../../images/phone2.png";
+import phone1 from "../../images/phone1.webp";
+import phone2 from "../../images/phone2.webp";
 import svg_sprite from "../../images/sprite_icons.svg";
 import scroll from "../../images/block1_scrollbutton.png";
 import paralaxMouseInit from "./parallax.js";
-import bytcoin from "../../images/bytcoin.png";
-import elipse from "../../images/Ellipse.png";
+import bytcoin from "../../images/bytcoin.webp";
+import elipse from "../../images/Ellipse.webp";
 import { MyButton } from '../mybutton/mybutton';
 import { block1Anim } from "../scrollAnimation.js";
 
@@ -15,11 +15,10 @@ export const Block1 = ()=>{
 
     useEffect(()=>{
         paralaxMouseInit();
-        block1Anim();
     },[]);
 
     return(
-        <section className={`container panel ${s.block1}`}>
+        <section className={`container block1__anim ${s.block1}`}>
 
             <img className={`block1__anim8 ${s.block1__elipse}`} src={elipse} alt="elipse" />
             <img className={`block1__anim8 ${s.block1__bytcoin}`} src={bytcoin} alt="bytcoin" />

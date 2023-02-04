@@ -1,9 +1,9 @@
 import React from 'react';
 import { MyButton } from '../mybutton/mybutton';
 import s from './block3.module.scss';
-import master from "../../images/master-hover.png";
-import visa from "../../images/visa.png";
-import usdt from "../../images/usdt.png";
+import master from "../../images/master-hover.webp";
+import visa from "../../images/visa.webp";
+import usdt from "../../images/usdt.webp";
 import icon from "../../images/ic_outline.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {Autoplay, Pagination, Navigation} from 'swiper/core';
@@ -11,7 +11,7 @@ import { Star } from './star';
 import 'swiper/css';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import elipse from "../../images/Ellipse.png";
+import elipse from "../../images/Ellipse.webp";
 import { useEffect } from 'react';
 import { block3Anim } from '../scrollAnimation.js';
 
@@ -21,7 +21,7 @@ export const Block3 = ()=>{
 
 
     return(
-        <section className={`container panel ${s.block3}`}>
+        <section className={`container ${s.block3}`}>
              <img className={`${s.block3__elipse1}`} src={elipse} alt="elipse" />
              <img className={`${s.block3__elipse2}`} src={elipse} alt="elipse" />
             <div className={s.block3__row}>
