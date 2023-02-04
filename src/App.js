@@ -4,20 +4,21 @@ import { Header } from "./components/header/header";
 import "./index.scss";
 import { useEffect } from "react";
 import { Block3 } from "./components/block3/block3";
-import {scrollAnimation, showAnimation} from "./animation-gsap.js";
 import { Block4 } from "./components/block4/block4";
 import { Footer } from "./components/footer/footer";
+import { ScrollAnimation } from "./components/scrollAnimation";
 
 
 
 function App() {
   
   useEffect(()=>{
-    scrollAnimation();
+    
   },[]);
 
   return (
     <div className="App">
+        <ScrollAnimation />
         <Header />
         <div className="swipe-section">
           <Block1 />
@@ -26,7 +27,7 @@ function App() {
           <Block4 />
 
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
   );
 }

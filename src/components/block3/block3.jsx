@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import elipse from "../../images/Ellipse.png";
 import { useEffect } from 'react';
-import { block3Anim } from '../../animation-gsap';
+import { block3Anim } from '../scrollAnimation.js';
 
 export const Block3 = ()=>{
 

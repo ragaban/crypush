@@ -10,13 +10,13 @@ export const Block4 = ()=>{
         <section className={`${s.block4} container panel block4__anim`}>
             <div className={s.block4__content}>
                 <div className={s.block4__lc}>
-                    <h1>Become A Trader & Save Your Time With Crypush </h1>
-                    <div className={s.block4__buttons}>
+                    <h1 className='block4__anim1'>Become A Trader & Save Your Time With Crypush </h1>
+                    <div className={`block4__anim2 ${s.block4__buttons}`}>
                         <MyButton text="Let`s Get Started" />
                         <MyButton text="Request A Demo" />
                     </div>   
                 </div>
-                <div className={s.block4__rc}>
+                <div className={`block4__anim3 ${s.block4__rc}`}>
                     <img src={block4} alt="block4" data-prlx-mouse="true" />
                 </div>
             </div>

@@ -8,12 +8,14 @@ import paralaxMouseInit from "./parallax.js";
 import bytcoin from "../../images/bytcoin.png";
 import elipse from "../../images/Ellipse.png";
 import { MyButton } from '../mybutton/mybutton';
+import { block1Anim } from "../scrollAnimation.js";
 
 export const Block1 = ()=>{
-    
+     
 
     useEffect(()=>{
         paralaxMouseInit();
+        block1Anim();
     },[]);
 
     return(
