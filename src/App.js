@@ -41,8 +41,8 @@ const App = observer(()=>{
       <Preloader />
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/crypush" element={<Main />} />
+          <Route path="/crypush/about" element={<About />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
