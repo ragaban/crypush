@@ -61,13 +61,16 @@
                         transition: 1s;
                         &:hover .language__menu{
                           opacity: 1;
+                          height: fit-content;
                         }
                         .language__menu{
                           position: absolute;
                           display: flex;
                           flex-direction: column;
+                          height: 0;
+                          overflow: hidden;
                           background: linear-gradient(0deg, rgb(20, 22, 29), rgb(20, 22, 29)) padding-box, linear-gradient(360deg, #0C3483 0%, #A2B6DF 108.33%, #6B8CCE 108.33%) border-box;
-                          top: 30px;
+                          top: 20px;
                           left: -25px;
                           transition: .4s;
                           opacity: 0;

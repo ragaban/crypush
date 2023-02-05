@@ -10,13 +10,15 @@ import traiding_content from "../../images/trading-content.webp";
 import api_content from "../../images/api-content.webp";
 import portfolio_content from "../../images/portfolio-content.webp";
 import { MenuButton } from './menuButton';
-import gsap from "gsap";
 
 export const Block2 = ()=>{
 
-    const tl = gsap.timeline();
+
     const [menuState, setMenuState] = useState({image: manage_content, desc: "Connect your account to the worldwide Crypto Exchanges and manage your funds directly there."});
+
     const img = useRef();
+
+    //Buttons data
     const menu = [
         {id: "button1", image: manage, text: "Manage Investments", content: manage_content, desc: "Connect your account to the worldwide Crypto Exchanges and manage your funds directly there."},
         {id: "button2", image: traiding, text: "Pro Trading Strategies", content: traiding_content, desc: "Choose a strategy that suits you best across Cryppush and Official Providers options."},
@@ -24,20 +26,26 @@ export const Block2 = ()=>{
         {id: "button4", image: portfolio, text: "Portfolio Accounting", content: portfolio_content, desc: "Check the money flow, trading history, and analytics right on the Cryppush application. "},
     ];
 
+    //Buttons views
     const buttons = menu.map((el, index) => {
         return <MenuButton el={el} func={setMenu} key={index}/>
     });
     
+    // Set active Button
     function setMenu(image, desc, buttonId){
         setMenuState({image: image, desc: desc});
         document.getElementById(buttonId).classList.add("block2__button_active");
     }
+
     useEffect(()=>{
+        // Set first active Button
         document.getElementById("button1").classList.add("block2__button_active");
     },[]);
 
     useEffect(()=>{
+        //Remove prev image
         img.current.classList.remove(s.active);
+        //Show select image
         setTimeout(()=>{
             img.current.classList.add(s.active);
         },200);

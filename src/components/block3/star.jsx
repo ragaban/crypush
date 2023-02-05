@@ -1,15 +1,14 @@
 import React from 'react';
 import s from './star.module.scss';
-import star from "../../images/star.png";
+import svg_sprite from '../../images/sprite_icons.svg'
 
 export const Star = (props)=>{
-        const stars = [];
-        for(let i=0;i<props.quantity;i++){
-            stars.push(React.createElement("img", {src: star, className: s.star, key:i}));
-        }
+        
     return(
         <div className={s.stars}>
-            {stars}
+            <svg className={`star_sc ${s.star}`}>
+                <use xlinkHref={`${svg_sprite}#star`}></use>
+            </svg>
         </div>
     )
 }

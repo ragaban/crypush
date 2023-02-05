@@ -6,6 +6,7 @@ export const darkTheme = {
     body: "background-color: #14161D;",
     textColor: "#fff",
     reverseColor: "#000",
+    white: "#fff",
     logoImage: logo,
     headerWrapperColor: "#182745",
     headerWrapperBorder: "none",
@@ -14,12 +15,15 @@ export const darkTheme = {
     slideWrapper: "linear-gradient(0deg, rgba(20, 22, 29, 0.2), rgba(20, 22, 29, 0.2)), linear-gradient(90deg, rgba(255, 255, 255, 0.1) -1.52%, rgba(255, 255, 255, 0.024) 104.35%)",
     slide: "linear-gradient(0deg, rgba(20, 22, 29, 1), rgba(20, 22, 29, 1)) padding-box, linear-gradient(360deg, #0C3483 0%, #A2B6DF 108.33%, #6B8CCE 108.33%) border-box",
     slideAfter: "linear-gradient(112.85deg, #0C3483 25.47%, #A2B6DF 90.88%, #6B8CCE 90.88%)",
+    footerColor: "#14161D",
+    starColor: "#fff"
     }
   
   export const lightTheme = {
     body: "#fff",
     textColor: "#000",
     reverseColor: "#fff",
+    white: "#fff",
     logoImage: logoLight,
     headerWrapperColor: "#fff",
     headerWrapperBorder: "1px #000 solid",
@@ -28,6 +32,8 @@ export const darkTheme = {
     slideWrapper: "none",
     slide: "linear-gradient(0deg, rgba(20, 22, 29, 0.2), rgba(20, 22, 29, 0.2)), linear-gradient(90deg, rgba(255, 255, 255, 0.1) -1.52%, rgba(255, 255, 255, 0.024) 104.35%)",
     slideAfter: "none",
+    footerColor: "#fff",
+    starColor: "#000"
   }
   
   export const GlobalStyles = createGlobalStyle`
@@ -49,7 +55,7 @@ export const darkTheme = {
         stroke: ${props => props.theme.textColor};
     }
     .header_language_sc{
-        color: ${props => props.theme.reverseColor};
+        color: ${props => props.theme.white};
     }
     .mybutton_sc{
         border: 1px ${props => props.theme.textColor} solid;
@@ -63,7 +69,7 @@ export const darkTheme = {
         border-bottom: ${props => props.theme.headerWrapperBorder};
     }
     .footer_sc{
-        background-color: ${props => props.theme.reverseColor};
+        background-color: ${props => props.theme.footerColor};
     }
     .footer_logo_sc{
         background-image: url(${props => props.theme.logoImage}) !important;
@@ -85,6 +91,12 @@ export const darkTheme = {
     }
     .b3Button{
         border: 1px ${props => props.theme.textColor} solid !important;
+        color: ${props => props.theme.textColor} !important;
+    }
+    .star_sc{
+        fill: ${props => props.theme.starColor};
+    }
+    .block3__anim3{
         color: ${props => props.theme.textColor} !important;
     }
   `

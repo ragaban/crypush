@@ -8,7 +8,6 @@ import paralaxMouseInit from "./parallax.js";
 import bytcoin from "../../images/bytcoin.webp";
 import elipse from "../../images/Ellipse.webp";
 import { MyButton } from '../mybutton/mybutton';
-import { block1Anim } from "../scrollAnimation.js";
 import { useTranslation } from 'react-i18next';
 import "../../18n.js";
 
@@ -17,6 +16,7 @@ export const Block1 = ()=>{
     const { t, i18n } = useTranslation();
 
     useEffect(()=>{
+        // Start parallax effect
         paralaxMouseInit();
     },[]);
 

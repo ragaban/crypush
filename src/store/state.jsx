@@ -4,10 +4,12 @@ class store {
   constructor() {
     makeAutoObservable(this);
   }
-
+  // Scroll state homepage
   stateScroll = 0;
   scrollTween = false;
   direction = false;
+
+  ///Theme
   theme = 'dark';
  
 
@@ -24,7 +26,6 @@ class store {
   }
 
   setTheme = (theme)=>{
-    console.log("swap theme - "+ theme);
     this.theme = theme;
     localStorage.setItem('theme', theme);
   }

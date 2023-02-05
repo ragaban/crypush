@@ -10,6 +10,7 @@ import { Footer } from '../footer/footer';
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
+import state from '../../store/state';
 
 export const About = ()=>{
 
@@ -18,8 +19,9 @@ export const About = ()=>{
 
     useEffect(()=>{
         let scroll = 0;
+
+        //Scroll About block
         const scrollHandler = (el)=>{
-            console.log(about.current.offsetHeight);
             if (el.deltaY < 0 && scroll >0) scroll = scroll - 50;
             if (el.deltaY > 0 && scroll < 1350) scroll = scroll + 50;
             gsap.to(window, {
@@ -30,12 +32,25 @@ export const About = ()=>{
                 duration: 0.1,
                 overwrite: true,
             });
+            state.setStateScroll(0);
         }
-
-        document.addEventListener("wheel", scrollHandler);
-
+        
+        //Show About block
         const tl = gsap.timeline();
-        tl.from(".about__anim", {opacity: 0, duration: 0.3, delay: 0.2 })
+        tl.from(".about__anim", {opacity: 0, duration: 0.3, delay: 0.2 });
+
+        gsap.to(window, {
+            scrollTo: {
+              y: 0,
+              autoKill: false,
+            },
+            duration: 0,
+            overwrite: true,
+          });
+
+        window.addEventListener("wheel", scrollHandler);
+
+        return () => {window.removeEventListener("wheel", scrollHandler);}
 
     },[]);
 

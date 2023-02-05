@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import s from "./header.module.scss";
-import logo from "../../images/logo.webp";
 import svg_sprite from "../../images/sprite_icons.svg";
 import gsap from "gsap";
 import { Link } from 'react-router-dom';
@@ -9,27 +8,22 @@ import { observer } from 'mobx-react-lite';
 import state from '../../store/state';
 
 
-
-
-
-
 export const Header = observer(()=>{
     
     const tl = gsap.timeline();
     const header = useRef();
     const header_wrapper = useRef();
+    const [language, setLanguage] = useState("EN");
     
-    const [theme, setTheme] = useState("light");
-
+    // Switch Theme function
     const switchTheme = () => {
         let currentTheme = localStorage.getItem("theme");
         if(currentTheme === 'light') state.setTheme('dark');
         else state.setTheme('light');
     };
 
-    const [language, setLanguage] = useState("EN");
-
     useEffect(()=>{
+        //Set header animation classes
         document.addEventListener('scroll', ()=>{
             if(window.scrollY > 10){
                 header.current.classList.add(s.header__mini);
@@ -40,7 +34,11 @@ export const Header = observer(()=>{
                 header_wrapper.current.classList.remove(s.header__wrapper_active);
             }
         });
+        // Header animation
         showElements();
+
+        //Set language view
+        setLanguage(localStorage.getItem('i18nextLng').toUpperCase());
     },[]);
 
     function showElements(){
@@ -54,7 +52,7 @@ export const Header = observer(()=>{
     }
 
     const changeLanguage = (el) => {
-        setLanguage(el.target.getAttribute('value').toUpperCase())
+        setLanguage(el.target.getAttribute('value').toUpperCase());
         i18n.changeLanguage(el.target.getAttribute('value'));
     }
 

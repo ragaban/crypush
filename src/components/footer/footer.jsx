@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './footer.module.scss';
-import logo from  "../../images/logo.webp";
 import telegram from "../../images/telegram-icon.png";
 import instagram from "../../images/instagram-icon.png";
 import twitter from "../../images/twitter-icon.png";

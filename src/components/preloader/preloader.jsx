@@ -5,7 +5,6 @@ import preloader from "../../images/preloader.svg";
 
 export const Preloader = ()=>{
 
-
     return(
         <div className={`preloader__anim ${s.preloader}`}>
             <img className={s.preloader__img1} src={preloader1} alt="preloader"/>

@@ -16,12 +16,16 @@ import state from "./store/state";
 const App = observer(()=>{
 
   useEffect(()=>{
-      const tl = gsap.timeline();
-      tl.to(".preloader__anim", { display: "none", duration: 0.1, delay: 1 });
+    // Hide preloader after 1 seconds
+    const tl = gsap.timeline();
+    tl.to(".preloader__anim", { display: "none", duration: 0.1, delay: 1 });
+
+    // Start animation after hide preloader
     setTimeout(()=>{
       block1Anim();
-    },900); 
-    
+    },700); 
+
+    // Set theme
     if(!localStorage.getItem('theme')) state.setTheme('dark');
     else state.setTheme(localStorage.getItem('theme'));
     
@@ -34,12 +38,12 @@ const App = observer(()=>{
     <BrowserRouter>
     <ThemeProvider theme = {state.theme === "dark"? darkTheme : lightTheme}>
       <GlobalStyles />
-    <Preloader />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <Preloader />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </ThemeProvider>
     </BrowserRouter>
   );

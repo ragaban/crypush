@@ -12,11 +12,11 @@ import 'swiper/css';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import elipse from "../../images/Ellipse.webp";
-import { useEffect } from 'react';
-import { block3Anim } from '../scrollAnimation.js';
+
 
 export const Block3 = ()=>{
 
+    //Swiper module init
     SwiperCore.use([Autoplay, Pagination]);
 
 
