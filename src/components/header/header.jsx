@@ -1,33 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react';
-import s from './header.module.scss';
+import s from "./header.module.scss";
 import logo from "../../images/logo.webp";
 import svg_sprite from "../../images/sprite_icons.svg";
 import gsap from "gsap";
 import { Link } from 'react-router-dom';
 import i18n from '../../18n';
+import { observer } from 'mobx-react-lite';
+import state from '../../store/state';
 
 
 
 
-export const Header = ()=>{
 
+
+export const Header = observer(()=>{
+    
     const tl = gsap.timeline();
     const header = useRef();
     const header_wrapper = useRef();
-    const [theme, setTheme] = useState(true);
-    const handleChange = (event) => {
-        setTheme(state => !state);
-      };
-
-    const [language, setLanguage] = React.useState(null);
-
-    const handleClick = (event) => {
-        setLanguage(event.currentTarget);
-    };
     
-    const handleClose = () => {
-        setLanguage(null);
+    const [theme, setTheme] = useState("light");
+
+    const switchTheme = () => {
+        let currentTheme = localStorage.getItem("theme");
+        if(currentTheme === 'light') state.setTheme('dark');
+        else state.setTheme('light');
     };
+
+    const [language, setLanguage] = useState("EN");
 
     useEffect(()=>{
         document.addEventListener('scroll', ()=>{
@@ -53,15 +53,16 @@ export const Header = ()=>{
         .from(".header__anim7", {opacity: 0, duration: .3}, "-=0.2")
     }
 
-    const changeLanguage = (language) => {
-        i18n.changeLanguage(language);
+    const changeLanguage = (el) => {
+        setLanguage(el.target.getAttribute('value').toUpperCase())
+        i18n.changeLanguage(el.target.getAttribute('value'));
     }
 
     return(
         <>
-        <div className={s.header__wrapper} ref={header_wrapper}></div>
-        <header className={s.header} ref={header}>
-            <img className={`header__anim1 ${s.header__logo}`} src={logo} alt="logo"></img>
+        <div className={`header_wrapper_sc ${s.header__wrapper}`} ref={header_wrapper}></div>
+        <header className={`header__sc ${s.header}`} ref={header}>
+            <div className={`header_logo_sc header__anim1 ${s.header__logo}`}></div>
             <nav className={s.header__menu}>
                 <ul>
                     <li className='header__anim2'><Link to="/">Home</Link></li>
@@ -72,15 +73,20 @@ export const Header = ()=>{
                             <svg className={s.header__icon}>
                                 <use xlinkHref={`${svg_sprite}#language_icon`}></use>
                             </svg>
-                            <span className={s.header__language} onClick={handleClick}> ENG </span>
+                            <div className={s.header__language}> {language}
+                                <div className={`header_language_sc ${s.language__menu}`}>
+                                    <span onClick={(el)=>changeLanguage(el)} value="en">EN</span>
+                                    <span onClick={(el)=>changeLanguage(el)} value="de">DE</span>
+                                </div>
+                             </div>
                             
                          </span>
                     </li>
                     <li className='header__anim6'>
                         <span className={s.menu__item}>
                             <label className={s.switch}>
-                                <input type="checkbox" onChange={(el)=> console.log(el.target.checked)}/>
-                                <span className={`${s.slider} ${s.round}`}></span>
+                                <input type="checkbox" checked={state.theme === 'light'? true : false} onChange={(el)=> {switchTheme()}}/>
+                                <span className={`slider__sc ${s.slider} ${s.round}`}></span>
                             </label>
                         </span>
                     </li>
@@ -97,4 +103,4 @@ export const Header = ()=>{
         </header>
         </>
     )
-}
+});

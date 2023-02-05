@@ -67,6 +67,15 @@
                 height: 50px;
                 margin-right: 20px;
             }
+            .scroll__text{
+                width: fit-content;
+                span{
+                    font-size: 12px;
+                }
+                p{
+                    width: fit-content;
+                }
+            }
         }
     }
     .block1__rc{

@@ -10,10 +10,10 @@ import messages from "../../images/footer-messages.png";
 export const Footer = ()=>{
 
     return(
-        <footer className={`container block5__anim ${s.footer}`}>
+        <footer className={`container footer_sc block5__anim ${s.footer}`}>
                 <div className={s.footer__wrapper}>
                     <div className={s.footer__lc}>
-                        <img src={logo} alt="footer logo" />
+                        <div className={`footer_logo_sc ${s.footer__logo}`}></div>
                         <p>An AI-powered crypto bot that allows <br/> you fully automate your trading.</p>
                         <span>© 2017 - 2022 Copyright by CryppushTM  - All rights reserved. </span>
                     </div>

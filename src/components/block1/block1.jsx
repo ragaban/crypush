@@ -27,7 +27,7 @@ export const Block1 = ()=>{
             <img className={`block1__anim8 ${s.block1__bytcoin}`} src={bytcoin} alt="bytcoin" />
 
             <div className={s.block1__lc}>
-                <h1 className='block1__anim1' >Algorithmic Crypto Trading Bot</h1>
+                <h1 className='block1__anim1' >{t("block1_text1")}</h1>
                 <p className='block1__anim2' >{t("block1_text2")}</p>
                 <div className={`block1__anim3 ${s.block1__buttons}`}>
                     <MyButton text="Let`S Get Started" />
@@ -35,13 +35,13 @@ export const Block1 = ()=>{
                 </div>
                 <div className={`block1__anim4 ${s.block1__info}`}>
                     <div>
-                        <span >24/7  automated process</span>
+                        <span >{t("block1_text3")}</span>
                         <svg className={s.block1__info_icon}>
                             <use xlinkHref={`${svg_sprite}#check`}></use>
                         </svg>
                     </div>
                     <div>
-                        <span>Algorithmic  system</span>
+                        <span>{t("block1_text4")}</span>
                         <svg className={s.block1__info_icon}>
                             <use xlinkHref={`${svg_sprite}#check`}></use>
                         </svg>
@@ -57,8 +57,8 @@ export const Block1 = ()=>{
                 </div>
                 <div className={`block1__anim6 ${s.block1__scrollblock}`}>
                     <img src={scroll} alt="scroll" />
-                    <div className="scroll__text">
-                        <p>Skroll down <span>to discover more</span></p>
+                    <div className={s.scroll__text}>
+                        <p>{t("block1_text5")}<br/><span>{t("block1_text6")}</span></p>
                     </div>
                 </div>
             </div>

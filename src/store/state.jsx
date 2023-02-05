@@ -8,6 +8,8 @@ class store {
   stateScroll = 0;
   scrollTween = false;
   direction = false;
+  theme = 'dark';
+ 
 
   setStateScroll = (state) => {
     this.stateScroll = state;
@@ -19,6 +21,12 @@ class store {
 
   setDirection = (state) => {
     this.direction = state;
+  }
+
+  setTheme = (theme)=>{
+    console.log("swap theme - "+ theme);
+    this.theme = theme;
+    localStorage.setItem('theme', theme);
   }
 }
 export default new store();

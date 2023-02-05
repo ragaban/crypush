@@ -15,18 +15,22 @@
     span{
         position: relative;
         left: 16px;
+        transform: translateX(0);
         transition: .8s;
         margin-right: 18px;
+        display: inline-block;
     }
     img{
         position: relative;
         right: 16px;
-        transition: .5s;
+        transform: translateX(0);
+        transition: .5s all;
         opacity: 0;
         position: relative;
         top: 2px;
         width: 16px;
         height: 16px;
+        display: inline-block;
     }
     &:hover{
         img{
@@ -35,7 +39,6 @@
         }
         span{
             transform: translateX(-16px);
-            display: inline-block;
         }
         background: linear-gradient(90deg, #0C3483 0%, #A2B6DF 100%, #6B8CCE 100%) no-repeat;
     }

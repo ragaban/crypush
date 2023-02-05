@@ -16,7 +16,6 @@
     .header__logo{
         width: 220px;
         height: 31px;
-        background-image: url("../../images/logo.webp");
     }
     .header__menu{
         ul{
@@ -29,6 +28,7 @@
                     margin-left: 70px;
                     position: relative;
                     transition: .3s;
+                    color: #000 !important;
                     &:hover{
                         color: #ccc;
                         &::after{
@@ -49,10 +49,10 @@
                     .header__icon{
                         width: 20px;
                         height: 20px;
+                        fill: #fff;
                         margin-right: 15px;
                         position: relative;
                         top: 3px;
-                        transition: .5s
                     }
                     .header__language{
                         cursor: pointer;
