@@ -4,6 +4,7 @@ import logo from "../../images/logo.webp";
 import svg_sprite from "../../images/sprite_icons.svg";
 import gsap from "gsap";
 import { Link } from 'react-router-dom';
+import i18n from '../../18n';
 
 
 
@@ -52,6 +53,10 @@ export const Header = ()=>{
         .from(".header__anim7", {opacity: 0, duration: .3}, "-=0.2")
     }
 
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    }
+
     return(
         <>
         <div className={s.header__wrapper} ref={header_wrapper}></div>
@@ -59,8 +64,8 @@ export const Header = ()=>{
             <img className={`header__anim1 ${s.header__logo}`} src={logo} alt="logo"></img>
             <nav className={s.header__menu}>
                 <ul>
-                    <li className='header__anim2'><Link to="/crypush/">Home</Link></li>
-                    <li className='header__anim3'><Link to="/crypush/about/">About Us</Link></li>
+                    <li className='header__anim2'><Link to="/">Home</Link></li>
+                    <li className='header__anim3'><Link to="/about/">About Us</Link></li>
                     <li className='header__anim4'><a href="#">Strategies</a></li>
                     <li className='header__anim5'>
                         <span className={s.menu__item}>
@@ -74,7 +79,7 @@ export const Header = ()=>{
                     <li className='header__anim6'>
                         <span className={s.menu__item}>
                             <label className={s.switch}>
-                                <input type="checkbox" />
+                                <input type="checkbox" onChange={(el)=> console.log(el.target.checked)}/>
                                 <span className={`${s.slider} ${s.round}`}></span>
                             </label>
                         </span>

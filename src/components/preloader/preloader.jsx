@@ -7,7 +7,7 @@ export const Preloader = ()=>{
 
 
     return(
-        <div class={`preloader__anim ${s.preloader}`}>
+        <div className={`preloader__anim ${s.preloader}`}>
             <img className={s.preloader__img1} src={preloader1} alt="preloader"/>
             <img className={s.preloader__img2} src={preloader} alt="preloader"/>
             <p>Loading...</p>

@@ -9,9 +9,12 @@ import bytcoin from "../../images/bytcoin.webp";
 import elipse from "../../images/Ellipse.webp";
 import { MyButton } from '../mybutton/mybutton';
 import { block1Anim } from "../scrollAnimation.js";
+import { useTranslation } from 'react-i18next';
+import "../../18n.js";
 
 export const Block1 = ()=>{
      
+    const { t, i18n } = useTranslation();
 
     useEffect(()=>{
         paralaxMouseInit();
@@ -25,7 +28,7 @@ export const Block1 = ()=>{
 
             <div className={s.block1__lc}>
                 <h1 className='block1__anim1' >Algorithmic Crypto Trading Bot</h1>
-                <p className='block1__anim2' >An AI-powered bot that allows you fully automate your trading</p>
+                <p className='block1__anim2' >{t("block1_text2")}</p>
                 <div className={`block1__anim3 ${s.block1__buttons}`}>
                     <MyButton text="Let`S Get Started" />
                     <MyButton text="Request A Demo" />
