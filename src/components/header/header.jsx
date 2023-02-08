@@ -63,8 +63,8 @@ export const Header = observer(()=>{
             <div className={`header_logo_sc header__anim1 ${s.header__logo}`}></div>
             <nav className={s.header__menu}>
                 <ul>
-                    <li className='header__anim2'><Link to="/">Home</Link></li>
-                    <li className='header__anim3'><Link to="/about/">About Us</Link></li>
+                    <li className='header__anim2'><Link to="crypush/">Home</Link></li>
+                    <li className='header__anim3'><Link to="about/about/">About Us</Link></li>
                     <li className='header__anim4'><a href="#">Strategies</a></li>
                     <li className='header__anim5'>
                         <span className={s.menu__item}>
