@@ -5,7 +5,8 @@ import { initReactI18next } from 'react-i18next';
 
 // I18Next Init
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
-  fallbackLng: 'en',
+  fallbackLng: 'de',
+  resources: { en: { translation: require('./locales/en/translation.json')}, de: { translation: require('./locales/de/translation.json')}},
   debug: true,
   detection: {
     order: ['queryString', 'cookie', "localStorage"],
@@ -17,3 +18,4 @@ i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
 })
 
 export default i18n
+
